@@ -1,0 +1,4 @@
+services:
+#    gemuni_elastic.example:
+#        class: Gemuni\ElasticBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,3 @@
+gemuni_elastic_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: GemuniElasticBundle:Default:index }

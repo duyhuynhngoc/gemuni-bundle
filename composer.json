@@ -1,0 +1,13 @@
+{
+    "name": "gemuni/gemuni-bundles",
+    "description": "[\"Symfony 2 bundle\", \"Elastic bundle\", \"Elasticsearch bundle\", \"RabbitMQ bundle\"]",
+    "type": "git",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Duy Huynh",
+            "email": "duy.huynhngoc@hotmail.com"
+        }
+    ],
+    "require": {}
+}
