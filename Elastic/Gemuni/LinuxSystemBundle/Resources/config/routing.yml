@@ -1,0 +1,3 @@
+gemuni_linux_system_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: GemuniLinuxSystemBundle:Default:index }

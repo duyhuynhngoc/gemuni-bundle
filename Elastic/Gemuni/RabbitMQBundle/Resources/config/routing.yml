@@ -1,0 +1,3 @@
+gemuni_rabbit_mq_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: GemuniRabbitMQBundle:Default:index }
