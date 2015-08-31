@@ -1,6 +1,5 @@
 <?php
 /**
- * Code Owner: CCIntegration Inc. S.P.I.D.E.R framework
  * Modified date: 8/28/2015
  * Modified by: Duy Huynh
  */
@@ -9,22 +8,29 @@ namespace Gemuni\ElasticBundle\Lib;
 
 
 class Process {
-    private $pid;
-    private $command;
+    private $pid = null;
+    private $command = null;
 
+    public function __construct($command)
+    {
+        $this->command = $command;
+    }
     public function run()
     {
-        $command = 'nohup '.$this->command.' > /dev/null 2>&1 & echo $!';
-        exec($command ,$op);
-        $this->pid = (int)$op[0];
+        if ($this->command != null) {
+            $command = 'nohup ' . $this->command . ' > /dev/null 2>&1 & echo $!';
+            exec($command, $op);
+            $this->pid = (int)$op[0];
+            return $this->pid;
+        }
+        return false;
     }
 
     public function kill()
     {
         $command = 'kill '.$this->pid;
         exec($command);
-        if ($this->status() == false)return true;
-        else return false;
+        return $this->status() != false;
     }
 
     public function status(){
@@ -32,7 +38,6 @@ class Process {
         $command = 'ps -p '.$this->pid;
         exec($command,$op);
 
-        if (!isset($op[1]))return false;
-        else return true;
+        return !isset($op[1])? false:true;
     }
 }
