@@ -52,6 +52,7 @@ class GemuniRabbitMQExtension extends Extension
         if(!isset($configs['basic_consume']['no_wait']))
             $configs['basic_consume']['no_wait'] = false;
 
+        $container->setParametr("rabitt_mq_config", $configs);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
